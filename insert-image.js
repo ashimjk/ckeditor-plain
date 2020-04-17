@@ -14,7 +14,8 @@ export class InsertImage extends Plugin {
             view.set({
                 label: 'Insert Image',
                 // icon: imageIcon,
-                tooltip: true
+                tooltip: true,
+                withText: true
             });
 
             // Callback executed once the image is clicked
