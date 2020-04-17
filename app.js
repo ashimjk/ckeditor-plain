@@ -11,11 +11,37 @@ import {getData} from '@ckeditor/ckeditor5-engine/src/dev-utils/model';
 import SimpleBox from "./simplebox/simplebox";
 import Heading from "@ckeditor/ckeditor5-heading/src/heading";
 import List from "@ckeditor/ckeditor5-list/src/list";
+import Placeholder from "./placeholder/placeholder";
 
 ClassicEditor
     .create(document.querySelector('#editor'), {
-        plugins: [Essentials, Paragraph, Heading, List, Bold, Italic, Image, InsertImage, ImageCaption, SimpleBox],
-        toolbar: ['heading', 'bold', 'italic', 'numberedList', 'bulletedList', 'insertImage', 'simpleBox']
+        plugins: [
+            Essentials,
+            Paragraph,
+            Heading,
+            List,
+            Bold,
+            Italic,
+            Image,
+            InsertImage,
+            ImageCaption,
+            SimpleBox,
+            Placeholder
+        ],
+        toolbar: [
+            'heading',
+            'bold',
+            'italic',
+            'numberedList',
+            'bulletedList',
+            'insertImage',
+            'simpleBox',
+            '|',
+            'placeholder'
+        ],
+        placeholderConfig: {
+            types: ['date', 'color', 'first name', 'surname']
+        }
     })
     .then(editor => {
         console.log('Editor was initialized', editor);
