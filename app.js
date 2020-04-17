@@ -12,6 +12,7 @@ import SimpleBox from "./simplebox/simplebox";
 import Heading from "@ckeditor/ckeditor5-heading/src/heading";
 import List from "@ckeditor/ckeditor5-list/src/list";
 import Placeholder from "./placeholder/placeholder";
+import Link from '@ckeditor/ckeditor5-link/src/link';
 
 ClassicEditor
     .create(document.querySelector('#editor'), {
@@ -26,7 +27,9 @@ ClassicEditor
             InsertImage,
             ImageCaption,
             SimpleBox,
-            Placeholder
+            Placeholder,
+            // BalloonViewDemo,
+            Link
         ],
         toolbar: [
             'heading',
@@ -37,7 +40,9 @@ ClassicEditor
             'insertImage',
             'simpleBox',
             '|',
-            'placeholder'
+            'placeholder',
+            // 'balloon',
+            'link'
         ],
         placeholderConfig: {
             types: ['date', 'color', 'first name', 'surname']
