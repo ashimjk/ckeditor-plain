@@ -15,7 +15,7 @@ import Placeholder from "./placeholder/placeholder";
 import Link from '@ckeditor/ckeditor5-link/src/link';
 
 ClassicEditor
-    .create(document.querySelector('#editor'), {
+    .create(document.querySelector('#ckeditor'), {
         plugins: [
             Essentials,
             Paragraph,
