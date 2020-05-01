@@ -4,7 +4,7 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import Image from "@ckeditor/ckeditor5-image/src/image";
-import {InsertImage} from "./insert-image";
+import {InsertImage} from "../insert-image";
 import ImageCaption from "@ckeditor/ckeditor5-image/src/imagecaption";
 import CKEditorInspector from '@ckeditor/ckeditor5-inspector';
 import {getData} from '@ckeditor/ckeditor5-engine/src/dev-utils/model';

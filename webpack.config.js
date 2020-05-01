@@ -2,15 +2,30 @@
 
 const path = require('path');
 const {styles} = require('@ckeditor/ckeditor5-dev-utils');
+const TerserPlugin = require( 'terser-webpack-plugin' );
 
 module.exports = {
-    // https://webpack.js.org/configuration/entry-context/
-    entry: './app.js',
-
-    // https://webpack.js.org/configuration/output/
+    entry: path.resolve(__dirname, 'src', 'ckeditor.js'),
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'ckeditor.js'
+        filename: 'ckeditor.js',
+        libraryTarget: 'umd',
+        libraryExport: 'default'
+    },
+
+    optimization: {
+        minimizer: [
+            new TerserPlugin({
+                sourceMap: true,
+                terserOptions: {
+                    output: {
+                        // Preserve CKEditor 5 license comments.
+                        comments: /^!/
+                    }
+                },
+                extractComments: false
+            })
+        ]
     },
 
     module: {
@@ -45,10 +60,6 @@ module.exports = {
             }
         ]
     },
-
-    // Useful for debugging.
     devtool: 'source-map',
-
-    // By default webpack logs warnings if the bundle is bigger than 200kb.
     performance: {hints: false}
 };
